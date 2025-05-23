@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">文件上传成功！</h4>
+    <p>您的下载密钥是：
+        <strong id="secretKey">{{ secret_key }}</strong>
+        <button class="btn btn-sm btn-outline-secondary ms-2" onclick="copyKey()">复制</button>
+    </p>
+    <hr>
+    <p class="mb-0">请妥善保存该密钥，用于文件下载。</p>
+</div>
+<div class="btn-group">
+    <a href="/" class="btn btn-primary">返回上传</a>
+    <a href="/download" class="btn btn-outline-secondary">前往下载</a>
+</div>
+
+<script>
+function copyKey() {
+    const key = document.getElementById('secretKey').textContent;
+    navigator.clipboard.writeText(key).then(() => {
+        alert('密钥已复制到剪贴板');
+    });
+}
+</script>
+{% endblock %}

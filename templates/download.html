@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>文件下载</h2>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">输入下载密钥</label>
+        <input type="text" class="form-control" name="secret_key" required 
+               value="{{ request.args.get('key', '') }}">
+    </div>
+    <button type="submit" class="btn btn-success">下载文件</button>
+</form>
+
+{% if files %}
+<hr>
+<h4>可下载文件列表：</h4>
+<ul class="list-group mt-3">
+    {% for file in files %}
+    <li class="list-group-item">
+        {{ file }} 
+        <a href="/download/{{ key }}/{{ file }}" class="btn btn-sm btn-outline-primary float-end">下载</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

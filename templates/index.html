@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>文件上传</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">选择文件（可多选）</label>
+        <input class="form-control" type="file" name="files" multiple required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">密钥位数</label>
+        <select class="form-select" name="key_length" required>
+            <option value="6">6位</option>
+            <option value="8">8位</option>
+            <option value="10">10位</option>
+            <option value="12">12位</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">上传文件</button>
+</form>
+{% endblock %}
