@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-card">
+        <h2 class="error-title">操作失败</h2>
+        <p class="error-subtitle">{{ subtitle }}</p>
+        <div class="error-message">
+            {{ message }}
+        </div>
+        <a href="/upload" class="error-link">返回上传页面</a>
+    </div>
+</div>
+{% endblock %}
+
+<style>
+.error-container {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+.error-title {
+    color: #dc3545;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.error-subtitle {
+    color: #6c757d;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #f5c6cb;
+    margin: 1rem 0;
+}
+.error-link {
+    display: inline-block;
+    background: #dc3545;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.error-link:hover {
+    background: #bb2d3b;
+}
+</style>

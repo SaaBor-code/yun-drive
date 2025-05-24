@@ -13,6 +13,9 @@
 
 {% if files %}
 <hr>
+<div class="mb-3">
+    <a href="/download/{{ key }}/zip" class="btn btn-primary">下载全部文件（ZIP压缩包）</a>
+</div>
 <h4>可下载文件列表：</h4>
 <ul class="list-group mt-3">
     {% for file in files %}

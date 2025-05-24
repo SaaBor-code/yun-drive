@@ -8,6 +8,13 @@
         <a href="/upload" class="btn btn-primary btn-lg px-4">立即上传</a>
         <a href="/download" class="btn btn-outline-secondary btn-lg px-4">下载文件</a>
     </div>
+    <!-- 新增统计卡片 -->
+    <div class="stats-card mt-4 p-3 rounded-3 bg-white shadow-sm">
+        <h5>当前服务统计</h5>
+        <div class="key-counter">
+            已生成 <span id="keyCount"><strong >{{total_keys}}</strong></span> 个有效提取码
+        </div>
+    </div>
 </div>
 
 <div class="row g-4 py-5">
@@ -31,3 +38,4 @@
     </div>
 </div>
 {% endblock %}
+
